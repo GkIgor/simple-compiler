@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/gkigor/development/lowlevel/c++/simple-compiler",
+  "command": "/usr/bin/c++  -I/home/gkigor/development/lowlevel/c++/simple-compiler/includes -g -std=gnu++17 -o CMakeFiles/scomp.dir/src/main.cpp.o -c /home/gkigor/development/lowlevel/c++/simple-compiler/src/main.cpp",
+  "file": "/home/gkigor/development/lowlevel/c++/simple-compiler/src/main.cpp"
+},
+{
+  "directory": "/home/gkigor/development/lowlevel/c++/simple-compiler",
+  "command": "/usr/bin/c++  -I/home/gkigor/development/lowlevel/c++/simple-compiler/includes -g -std=gnu++17 -o CMakeFiles/scomp.dir/src/frontend/lexer/lexer.cpp.o -c /home/gkigor/development/lowlevel/c++/simple-compiler/src/frontend/lexer/lexer.cpp",
+  "file": "/home/gkigor/development/lowlevel/c++/simple-compiler/src/frontend/lexer/lexer.cpp"
+},
+{
+  "directory": "/home/gkigor/development/lowlevel/c++/simple-compiler",
+  "command": "/usr/bin/c++  -I/home/gkigor/development/lowlevel/c++/simple-compiler/includes -g -std=gnu++17 -o CMakeFiles/scomp.dir/src/frontend/lexer/tokenize.cpp.o -c /home/gkigor/development/lowlevel/c++/simple-compiler/src/frontend/lexer/tokenize.cpp",
+  "file": "/home/gkigor/development/lowlevel/c++/simple-compiler/src/frontend/lexer/tokenize.cpp"
+}
+]

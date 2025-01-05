@@ -1,0 +1,3 @@
+/home/gkigor/development/lowlevel/c++/simple-compiler/CMakeFiles/scomp.dir
+/home/gkigor/development/lowlevel/c++/simple-compiler/CMakeFiles/edit_cache.dir
+/home/gkigor/development/lowlevel/c++/simple-compiler/CMakeFiles/rebuild_cache.dir
