@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/scomp.dir/src/main.cpp.o CMakeFiles/scomp.dir/src/frontend/lexer/lexer.cpp.o CMakeFiles/scomp.dir/src/frontend/lexer/tokenize.cpp.o -o scomp 
