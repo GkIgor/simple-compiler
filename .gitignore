@@ -47,3 +47,7 @@ cmake_install.cmake
 .cache/
 *.swp
 *~
+
+# test files
+scomp
+compiler_*

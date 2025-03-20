@@ -1,0 +1,41 @@
+CLASS Pessoa (
+    nome TEXT,
+    idade INT
+) {
+    FN new(nome TEXT, idade INT) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+
+    FN getInfo() {
+        return nome || ' tem ' || idade || ' anos.';
+    }
+
+    FN aniversario() {
+        idade = idade + 1;
+    }
+}
+
+FN main() {
+    VAR pessoa = NEW Pessoa("João", 25);
+
+    IF pessoa.idade > 18 {
+        PRINT("Maior de idade");
+    } ELSE IF pessoa.idade == 18 {
+        PRINT("Recém adulto");
+    } ELSE {
+        PRINT("Menor de idade");
+    }
+
+    FOR i IN 1..10 {
+        PRINT("Contando: " || i);
+    }
+
+    VAR contador = 0;
+    WHILE contador < 5 {
+        PRINT("Loop: " || contador);
+        contador = contador + 1;
+    }
+}
+
+RUN main();
