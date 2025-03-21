@@ -46,7 +46,7 @@ namespace frontend
       bool is_type(const std::string &word);
     };
 
-    void start_analize_lexical(std::string &filename);
+    Tokenize *start_analize_lexical(std::string &filename);
 
   } // namespace lexer
 
