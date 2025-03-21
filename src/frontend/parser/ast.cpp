@@ -1,4 +1,4 @@
-#include "parser.h"
+#include "frontend/parser/parser.h"
 
 namespace frontend
 {
@@ -85,8 +85,50 @@ namespace frontend
       }
     }
 
-    void parser()
+    Node *Parser::parse()
     {
+      root = new Node(NodeType::PROGRAM);
+      root->data = ProgramNode{
+          "unknow_os",
+          "unknow_arch",
+          {},
+      };
+
+      while (current_pos < tokens.size())
+      {
+        Token tok = current_token();
+
+        if (match("CLASS"))
+        {
+          Node *class_node = parse_class_declaration();
+
+          std::get<ProgramNode>(root->data).declarations.push_back(class_node);
+        }
+        else if (match("FN"))
+        {
+          Node *func_node = parse_function_declaration();
+
+          std::get<ProgramNode>(root->data).declarations.push_back(func_node);
+        }
+        else if (match("RUN"))
+        {
+          Node *run_node = parse_function_call();
+
+          std::get<ProgramNode>(root->data).declarations.push_back(run_node);
+          expect(";"); // espera um ;
+        }
+        else
+        {
+          // Token inesperado
+          Node *unknown_node = new Node(NodeType::UNKNOWN);
+          unknown_node->data = LiteralNode{tok}; // depois eu vejo o que fazer nessa bagaça
+
+          std::get<ProgramNode>(root->data).declarations.push_back(unknown_node);
+          advance();
+        }
+      }
+
+      return root;
     }
 
   } // namespace lexer

@@ -4,11 +4,12 @@
 #include <iostream>
 #include <map>
 #include <exception>
+#include <string>
 
 namespace core
 {
-  void printRed(const std::string &text);
-  void printYellow(const std::string &text);
+  void printRed(const char *text);
+  void printYellow(const char *text);
   std::runtime_error throw_program_error(const char *message);
 } // namespace core
 

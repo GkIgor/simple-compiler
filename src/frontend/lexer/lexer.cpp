@@ -6,17 +6,16 @@ namespace frontend
   {
     Tokenize *start_analize_lexical(std::string &filename)
     {
-      Tokenize tokenizer(filename);
+      Tokenize *tokenizer = new Tokenize(filename);
 
-      std::vector<Token> tokens = tokenizer.getTokens();
+      std::vector<Token> tokens = tokenizer->getTokens();
 
       for (auto it = tokens.begin(); it != tokens.end(); ++it)
       {
-
         print(*it);
       }
 
-      return &tokenizer;
+      return tokenizer;
     }
   } // namespace lexer
 } // namespace frontend

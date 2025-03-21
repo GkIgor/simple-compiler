@@ -2,10 +2,12 @@
 #define PARSER_H
 
 #include <variant>
-#include "lexer.h"
-#include "keywords.h"
-#include "utils.hpp"
+#include "frontend/lexer/lexer.h"
+#include "frontend/lexer/keywords.h"
+#include "frontend/utils/utils.hpp"
 #include "core/core.hpp"
+
+struct Node;
 
 enum class NodeType
 {
@@ -26,7 +28,7 @@ enum class NodeType
   UNKNOWN               // Para erros ou tipos não identificados
 };
 
-typedef struct ProgramNode
+struct ProgramNode
 {
   std::string target_os;
   std::string target_arch;
@@ -155,7 +157,7 @@ namespace frontend
 {
   namespace parser
   {
-    Token empty_token = Token{0, 0, 0, "EOF", ""};
+    extern const Token empty_token;
 
     class Parser
     {
@@ -193,7 +195,7 @@ namespace frontend
       bool match_type(const std::string &type); // Verifica se o token atual tem o tipo esperado, se sim, avança para o próximo token.
       void expect(const std::string &lexeme);   // Verifica se o token atual tem o lexema esperado e avança
 
-      Node *getRoot() const { return root; } // Retorna a o nó da raiz
+      Node *getRoot() const; // Retorna a o nó da raiz
     }; // Class Parser
 
     Parser *start_parse(const std::vector<Token> &tokens);

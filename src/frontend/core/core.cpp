@@ -2,12 +2,12 @@
 
 namespace core
 {
-  void printRed(const std::string &text)
+  void printRed(const char *text)
   {
     std::cout << "\033[31m" << text << "\033[0m"; // 31: vermelho
   }
 
-  void printYellow(const std::string &text)
+  void printYellow(const char *text)
   {
     std::cout << "\033[33m" << text << "\033[0m"; // 33: amarelo
   }

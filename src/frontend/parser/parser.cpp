@@ -1,15 +1,21 @@
-#include "parser.h"
+#include "frontend/parser/parser.h"
 
 namespace frontend
 {
   namespace parser
   {
+    const Token empty_token = Token{0, 0, 0, "EOF", ""};
 
-    AstProgram *start_parse(const std::vector<Token> &tokens)
+    Parser *start_parse(const std::vector<Token> &tokens)
     {
-      AstProgram ast(tokens);
+      Parser *parser = new Parser(tokens);
 
-      return &ast;
+      if (parser != nullptr)
+      {
+        parser->parse();
+      }
+
+      return parser;
     }
 
   } // namespace parser

@@ -18,6 +18,12 @@ set(SOURCES
     src/main.cpp
     src/frontend/lexer/lexer.cpp
     src/frontend/lexer/tokenize.cpp
+    src/frontend/parser/parser.cpp
+    src/frontend/parser/ast.cpp
+
+    src/frontend/parser/declarations/parse_class_declaration.cpp
+
+    src/frontend/core/core.cpp
 )
 
 # Cria o executável

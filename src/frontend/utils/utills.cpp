@@ -2,6 +2,12 @@
 
 namespace frontend
 {
+  bool isLittleEndian()
+  {
+    int num = 1;
+    return *(char *)&num == 1;
+  }
+
   std::map<std::string, std::string> get_current_os()
   {
     std::map<std::string, std::string> os_info;
