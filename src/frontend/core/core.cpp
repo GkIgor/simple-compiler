@@ -14,7 +14,6 @@ namespace core
 
   std::runtime_error throw_program_error(const char *message)
   {
-
     return std::runtime_error(message);
   }
 } // namespace core

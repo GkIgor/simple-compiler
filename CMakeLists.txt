@@ -13,21 +13,31 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # Adiciona os diretórios de include
 include_directories(${PROJECT_SOURCE_DIR}/includes)
 
-# Adiciona os arquivos fonte
-set(SOURCES
-    src/main.cpp
-    src/frontend/lexer/lexer.cpp
-    src/frontend/lexer/tokenize.cpp
-    src/frontend/parser/parser.cpp
-    src/frontend/parser/ast.cpp
+# Garante que src/main.cpp esteja incluído
+list(APPEND SOURCES "${PROJECT_SOURCE_DIR}/src/main.cpp")
 
-    src/frontend/parser/declarations/parse_class_declaration.cpp
-
-    src/frontend/core/core.cpp
-)
-
-# Cria o executável
+file(GLOB_RECURSE SOURCES "src/**/*.cpp" "src/main.cpp")
+message("Sources: ${SOURCES}")
 add_executable(scomp ${SOURCES})
+
+# # Adiciona os arquivos fonte
+# set(SOURCES
+#     src/main.cpp
+#     src/frontend/lexer/lexer.cpp
+#     src/frontend/lexer/tokenize.cpp
+#     src/frontend/lexer/tokenize.cpp
+#     src/frontend/lexer/keywords.cpp
+
+#     src/frontend/parser/parser.cpp
+#     src/frontend/parser/ast.cpp
+
+#     src/frontend/parser/declarations/parse_class_declaration.cpp
+
+#     src/frontend/core/core.cpp
+# )
+
+# # Cria o executável
+# add_executable(scomp ${SOURCES})
 
 # Se necessário, pode adicionar mais flags aqui (ex: -Wall)
 # target_compile_options(neovim-clone PRIVATE -Wall)

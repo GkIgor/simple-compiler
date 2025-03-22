@@ -37,6 +37,7 @@ namespace frontend
       return empty_token;
     }
 
+    // Retorna proximo token
     Token Parser::peek() const
     {
       if (this->current_pos + 1 < this->tokens.size())
@@ -101,22 +102,21 @@ namespace frontend
         if (match("CLASS"))
         {
           Node *class_node = parse_class_declaration();
-
           std::get<ProgramNode>(root->data).declarations.push_back(class_node);
         }
-        else if (match("FN"))
-        {
-          Node *func_node = parse_function_declaration();
+        // else if (match("FN"))
+        // {
+        //   Node *func_node = parse_function_declaration();
 
-          std::get<ProgramNode>(root->data).declarations.push_back(func_node);
-        }
-        else if (match("RUN"))
-        {
-          Node *run_node = parse_function_call();
+        //   std::get<ProgramNode>(root->data).declarations.push_back(func_node);
+        // }
+        // else if (match("RUN"))
+        // {
+        //   Node *run_node = parse_function_call();
 
-          std::get<ProgramNode>(root->data).declarations.push_back(run_node);
-          expect(";"); // espera um ;
-        }
+        //   std::get<ProgramNode>(root->data).declarations.push_back(run_node);
+        //   expect(";"); // espera um ;
+        // }
         else
         {
           // Token inesperado

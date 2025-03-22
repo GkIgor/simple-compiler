@@ -151,6 +151,9 @@ struct Node
       data;
 
   Node(NodeType t) : type(t) {}
+
+  template <typename T>
+  Node(NodeType t, T &&value) : type(t), data(std::forward<T>(value)) {}
 };
 
 namespace frontend

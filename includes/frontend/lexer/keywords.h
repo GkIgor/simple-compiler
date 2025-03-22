@@ -47,7 +47,9 @@ namespace symbol_table
     OBRACKET,
     CBRACKET,
     OPAREN,
-    CPAREN
+    CPAREN,
+    COMMA,
+    SEMICOLON,
   };
 
   const std::unordered_map<Sintaxe, std::string> sintaxeToString = {
@@ -64,39 +66,37 @@ namespace symbol_table
       {Sintaxe::RUN, "RUN"},
       {Sintaxe::RETURN, "RETURN"},
       {Sintaxe::THIS, "THIS"},
-      {Sintaxe::EQUAL, "EQUAL"},
-      {Sintaxe::NOT_EQUAL, "NOT_EQUAL"},
-      {Sintaxe::LESS_EQUAL, "LESS_EQUAL"},
-      {Sintaxe::GREATER_EQUAL, "GREATER_EQUAL"},
-      {Sintaxe::AND, "AND"},
-      {Sintaxe::OR, "OR"},
-      {Sintaxe::INCREMENT, "INCREMENT"},
-      {Sintaxe::DECREMENT, "DECREMENT"},
-      {Sintaxe::ADD_EQUAL, "ADD_EQUAL"},
-      {Sintaxe::SUB_EQUAL, "SUB_EQUAL"},
-      {Sintaxe::GREATER, "GREATER"},
-      {Sintaxe::LESS, "LESS"},
-      {Sintaxe::ASSIGN, "ASSIGN"},
-      {Sintaxe::PLUS, "PLUS"},
-      {Sintaxe::RANGE, "RANGE"},
-      {Sintaxe::SPREAD, "SPREAD"},
-      {Sintaxe::MINUS, "MINUS"},
-      {Sintaxe::MULTIPLY, "MULTIPLY"},
-      {Sintaxe::DIVIDE, "DIVIDE"},
-      {Sintaxe::MODULO, "MODULO"},
-      {Sintaxe::CONCAT, "CONCAT"},
-      {Sintaxe::NOT, "NOT"},
-      {Sintaxe::OBRACKET, "OBRACKET"},
-      {Sintaxe::CBRACKET, "CBRACKET"},
-      {Sintaxe::OPAREN, "OPAREN"},
-      {Sintaxe::CPAREN, "CPAREN"},
+      {Sintaxe::EQUAL, "="},
+      {Sintaxe::NOT_EQUAL, "!="},
+      {Sintaxe::LESS_EQUAL, "<="},
+      {Sintaxe::GREATER_EQUAL, ">="},
+      {Sintaxe::AND, "&&"},
+      {Sintaxe::OR, "||"},
+      {Sintaxe::INCREMENT, "++"},
+      {Sintaxe::DECREMENT, "--"},
+      {Sintaxe::ADD_EQUAL, "+="},
+      {Sintaxe::SUB_EQUAL, "-="},
+      {Sintaxe::GREATER, ">"},
+      {Sintaxe::LESS, "<"},
+      {Sintaxe::ASSIGN, "="},
+      {Sintaxe::PLUS, "+"},
+      {Sintaxe::RANGE, ".."},
+      {Sintaxe::SPREAD, "..."},
+      {Sintaxe::MINUS, "-"},
+      {Sintaxe::MULTIPLY, "*"},
+      {Sintaxe::DIVIDE, "/"},
+      {Sintaxe::MODULO, "%"},
+      {Sintaxe::CONCAT, "||"},
+      {Sintaxe::NOT, "!"},
+      {Sintaxe::OBRACKET, "{"},
+      {Sintaxe::CBRACKET, "}"},
+      {Sintaxe::OPAREN, "("},
+      {Sintaxe::CPAREN, ")"},
+      {Sintaxe::COMMA, ","},
+      {Sintaxe::SEMICOLON, ";"},
   };
 
-  std::string sintaxe_string(Sintaxe sintaxe)
-  {
-    auto it = sintaxeToString.find(sintaxe);
-    return (it != sintaxeToString.end()) ? it->second : "UNKNOWN";
-  }
+  std::string sintaxe_string(Sintaxe sintaxe);
 
   static const std::vector<std::string> keywords = {
       "CLASS",
