@@ -10,10 +10,10 @@ namespace frontend
 
       std::vector<Token> tokens = tokenizer->getTokens();
 
-      for (auto it = tokens.begin(); it != tokens.end(); ++it)
-      {
-        print(*it);
-      }
+      // for (auto it = tokens.begin(); it != tokens.end(); ++it)
+      // {
+      //   print(*it);
+      // }
 
       return tokenizer;
     }

@@ -64,10 +64,13 @@ namespace frontend::parser
       {
         if (!match(symbol_table::sintaxe_string(symbol_table::Sintaxe::COMMA)))
         {
-          std::string error_message = "Esperava ',' ou ')' em linha " +
-                                      std::to_string(current_token().line) + ", mas foi encontrado um '" +
-                                      peek().lexeme + "'";
-          throw core::throw_program_error(error_message.c_str());
+          if (current_token().lexeme != symbol_table::sintaxe_string(symbol_table::Sintaxe::CPAREN))
+          {
+            std::string error_message = "Esperava ',' ou ')' em linha " +
+                                        std::to_string(current_token().line) + ", mas foi encontrado um '" +
+                                        peek().lexeme + "'";
+            throw core::throw_program_error(error_message.c_str());
+          }
         }
       }
     }
